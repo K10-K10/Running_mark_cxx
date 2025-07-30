@@ -7,27 +7,30 @@ Run_mark::Run_mark()
 	Run_mark::senter_y = 0;
 }
 
-void Run_mark::show_run_mark(bool flag_done)
+void Run_mark::show_run_mark(bool flag_loop)
 {
-	std::cout << "/" << std::flush;
+	while (flag_loop)
+	{
+		std::cout << "/" << std::flush;
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
-	std::cout << "\x08" << "-" << std::flush;
+		std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
+		std::cout << "\x08" << "-" << std::flush;
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
-	std::cout << "\x08" << "\\" << std::flush;
+		std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
+		std::cout << "\x08" << "\\" << std::flush;
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
-	std::cout << "\x08" << "|" << std::flush;
+		std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
+		std::cout << "\x08" << "|" << std::flush;
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
-	std::cout << "\x08" << "-" << std::flush;
+		std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
+		std::cout << "\x08" << "-" << std::flush;
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
-	std::cout << "\x08" << "\\" << std::flush;
+		std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
+		std::cout << "\x08" << "\\" << std::flush;
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
-	std::cout << "\x08" << "|" << std::flush;
-	std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
-	std::cout << "\x08";
+		std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
+		std::cout << "\x08" << "|" << std::flush;
+		std::this_thread::sleep_for(std::chrono::milliseconds(Run_mark::time_delay_micro_seconds));
+		std::cout << "\x08";
+	}
 }
