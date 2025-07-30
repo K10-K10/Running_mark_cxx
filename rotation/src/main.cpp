@@ -1,4 +1,4 @@
-#include "rotation/rotation_run_mark.hpp"
+#include "rotation_run_mark.hpp"
 
 int main()
 {
