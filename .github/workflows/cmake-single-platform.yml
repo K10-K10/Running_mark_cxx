@@ -1,10 +1,10 @@
-name: Build
+name: Check
 
 on: [push]
 
 jobs:
-  build:
-    name: Build
+  install:
+    name: Install dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -13,13 +13,59 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y cmake
 
+  build-rotation:
+    needs: install
+    name: Build rotation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Create build directory
-        run: mkdir -p build
+        run: mkdir -p rotation/build
 
       - name: Run CMake
-        working-directory: ./build
+        working-directory: rotation/build
         run: cmake ..
 
       - name: Build with make
-        working-directory: ./build
+        working-directory: rotation/build
+        run: make
+
+  build-dot:
+    needs: install
+    name: Build dot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create build directory
+        run: mkdir -p dot/build
+
+      - name: Run CMake
+        working-directory: dot/build
+        run: cmake ..
+
+      - name: Build with make
+        working-directory: dot/build
+        run: make
+
+  build-percentage:
+    needs: install
+    name: Build percentage_bar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create build directory
+        run: mkdir -p percentage_bar/build
+
+      - name: Run CMake
+        working-directory: percentage_bar/build
+        run: cmake ..
+
+      - name: Build with make
+        working-directory: percentage_bar/build
         run: make
