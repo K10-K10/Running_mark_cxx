@@ -12,5 +12,5 @@ public:
 	void show_run_mark(bool);
 
 private:
-	const int time_delay_micro_seconds = 100;
+	const int time_delay_micro_seconds = 400;
 };
