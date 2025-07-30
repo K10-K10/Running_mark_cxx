@@ -1,5 +1,4 @@
 #include "rotation_run_mark.hpp"
-#include <iostream>
 
 Rotation_run_mark::Rotation_run_mark()
 {
