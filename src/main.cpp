@@ -5,10 +5,6 @@ int main()
 {
 	Run_mark run_mark;
 	bool flag = true;
-	std::cout << "test" << std::endl;
-	while (flag)
-	{
-		run_mark.show_run_mark(flag);
-	}
+	run_mark.show_run_mark(flag);
 	return 0;
 }
