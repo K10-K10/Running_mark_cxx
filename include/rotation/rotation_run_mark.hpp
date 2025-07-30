@@ -7,8 +7,8 @@ class Rotation_run_mark
 {
 public:
 	Rotation_run_mark();
-	int senter_x;
-	int senter_y;
+	int position_x;
+	int position_y;
 	void show_run_mark(bool);
 
 private:
