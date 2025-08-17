@@ -24,4 +24,5 @@ void Rotation_run_mark::show_run_mark(bool flag_loop)
 		std::this_thread::sleep_for(std::chrono::milliseconds(Rotation_run_mark::time_delay_micro_seconds));
 		std::cout << "\x08";
 	}
+	std::cout << "\x08" << std::flush;
 }
