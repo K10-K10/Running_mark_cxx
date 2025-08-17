@@ -41,6 +41,7 @@
 *.dwo
 */build/
 /CMakeFiles/
+*/src/
 /CMakeCache.txt
 /*/build.sh
 .vscode
